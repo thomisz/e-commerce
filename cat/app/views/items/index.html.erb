@@ -1,2 +1,28 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<h1>😺 Here are all the Kittycats you can buy! 😺</h1>
+  <p>Hello, <%= current_user.name %>, get your Kittycats! </p>
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Price </th>
+      <th>Description </th>
+      <th>Image </th>
+    </tr>
+
+    <% @items.each do |item|%>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= item.price %></td>
+        <td><%= item.description %></td>
+        <td><%= item.image_url %></td>
+        <td><%= link_to 'Show item',
+                items_show_path(item) %></td>
+      </tr>
+    <% end %>
+  </table>
+  <li>
+  <%= link_to "Sign In", new_user_session_path %>
+  </li>
+  <li>
+    <%= link_to "Sign Up", new_user_registration_path %>
+  </li>
+</ul>
