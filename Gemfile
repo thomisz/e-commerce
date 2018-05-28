@@ -16,6 +16,7 @@ gem 'jbuilder'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faker'
 gem 'devise'
+gem 'pg', '0.20.0'
 
 group :development, :test do
   gem 'sqlite3'
