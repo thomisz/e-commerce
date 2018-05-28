@@ -1,0 +1,50 @@
+<h1>Welcome! you can buy the cutest cat pictures here! </h1>
+  <% if user_signed_in?%>
+  <p> Hello <%= current_user.name%></br>
+  </p>
+
+  <% if user_signed_in?%>
+  <h1>😺 Here are all the Kittycats you can buy! 😺</h1>
+  <p><%= current_user.name %>, get your Kittycats! </p>
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Price </th>
+      <th>Description </th>
+      <th>Image </th>
+    </tr>
+
+    <% @items.each do |item|%>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.price %></td>
+        <td><%= item.description %></td>
+        <td><%= item.image_url %></td>
+
+      </tr>
+    <% end %>
+  </table>
+  <% else %>
+  <li>
+  <%= link_to "Sign In", new_user_session_path %>
+  </li>
+  <li>
+    <%= link_to "Sign Up", new_user_registration_path %>
+  </li>
+  <% end %>
+  <ul>
+    <li>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+    </li>
+    <li>
+      <%= link_to "Edit Account", edit_user_registration_path %>
+    </li>
+    <% else %>
+    <li>
+    <%= link_to "Sign In", new_user_session_path %>
+    </li>
+    <li>
+      <%= link_to "Sign Up", new_user_registration_path %>
+    </li>
+    <% end %>
+</ul>

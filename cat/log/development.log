@@ -1,0 +1,881 @@
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20180528114028)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "surname" varchar, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180528114028_devise_create_users.rb:5
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20180528114028_devise_create_users.rb:41
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20180528114028_devise_create_users.rb:42
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180528114028"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-28 12:07:03.763824"], ["updated_at", "2018-05-28 12:07:03.763824"]]
+  ↳ bin/rails:9
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:07:18 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (20.7ms)
+Completed 200 OK in 67ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-05-28 14:07:18 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:12:24 +0200
+Processing by HomeController#index as HTML
+Completed 406 Not Acceptable in 499ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - HomeController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/7d9f218a4a77e75d/variables" for 127.0.0.1 at 2018-05-28 14:12:25 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:13:44 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 326ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::ArgumentError - require_tree argument must be a directory:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3348066920986056129_70282101566840'
+
+Started POST "/__better_errors/08365a56b99f81bc/variables" for 127.0.0.1 at 2018-05-28 14:13:44 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:21:48 +0200
+
+NameError - uninitialized constant HomeController:
+
+Started POST "/__better_errors/81dc032a435e6af4/variables" for 127.0.0.1 at 2018-05-28 14:21:49 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:21:51 +0200
+
+NameError - uninitialized constant HomeController:
+
+Started POST "/__better_errors/f514e6cae72a265e/variables" for 127.0.0.1 at 2018-05-28 14:21:51 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:22:32 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+
+NameError - uninitialized constant HomeController:
+
+Started POST "/__better_errors/84e5cdfa27238677/variables" for 127.0.0.1 at 2018-05-28 14:22:33 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:23:58 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (5.2ms)
+Completed 200 OK in 29ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:24:01 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (5.2ms)
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:24:46 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (5.0ms)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:25:36 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (4.3ms)
+Completed 200 OK in 15ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:30:05 +0200
+
+NameError - uninitialized constant UsersController:
+
+Started POST "/__better_errors/1cec1e05acf535dd/variables" for 127.0.0.1 at 2018-05-28 14:30:05 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:31:17 +0200
+
+ArgumentError - Missing :controller key on routes definition, please check your routes.:
+  config/routes.rb:5:in `block in <main>'
+  config/routes.rb:1:in `<main>'
+
+Started POST "/__better_errors/2713bc69d7315f34/variables" for 127.0.0.1 at 2018-05-28 14:31:18 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:38:08 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 15ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-05-28 14:38:31 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (2.4ms)
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application (1581.6ms)
+Completed 500 Internal Server Error in 2028ms (ActiveRecord: 0.8ms)
+
+
+
+Sprockets::ArgumentError - require_tree argument must be a directory:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3723620793457976770_70270029215300'
+
+Started POST "/__better_errors/5f5667149ac22908/variables" for 127.0.0.1 at 2018-05-28 14:38:34 +0200
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-05-28 14:38:39 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::ArgumentError - require_tree argument must be a directory:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3723620793457976770_70270032837840'
+
+Started POST "/__better_errors/74c87c6c561412df/variables" for 127.0.0.1 at 2018-05-28 14:38:39 +0200
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-05-28 14:39:04 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application (18.9ms)
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 1.5ms)
+
+
+
+Sprockets::ArgumentError - require_tree argument must be a directory:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3723620793457976770_70270048730840'
+
+Started POST "/__better_errors/23b60a873cce0b86/variables" for 127.0.0.1 at 2018-05-28 14:39:05 +0200
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-05-28 14:40:30 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.9ms)
+
+
+
+Sprockets::ArgumentError - require_tree argument must be a directory:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3723620793457976770_70270001196600'
+
+Started POST "/__better_errors/d4a15281945bb94c/variables" for 127.0.0.1 at 2018-05-28 14:40:30 +0200
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-05-28 14:43:56 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.9ms)
+
+
+
+Sprockets::ArgumentError - require_tree argument must be a directory:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3723620793457976770_70269993225560'
+
+Started POST "/__better_errors/95225d7a3b40624a/variables" for 127.0.0.1 at 2018-05-28 14:43:56 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:44:00 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (5.1ms)
+Completed 200 OK in 17ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 14:44:02 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (4.2ms)
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-05-28 14:44:54 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application (11.5ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::ArgumentError - require_tree argument must be a directory:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3723620793457976770_70269998619120'
+
+Started POST "/__better_errors/3750a52b4a9a2599/variables" for 127.0.0.1 at 2018-05-28 14:44:54 +0200
+Started GET "/users" for 127.0.0.1 at 2018-05-28 14:44:58 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user" for 127.0.0.1 at 2018-05-28 14:45:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/3" for 127.0.0.1 at 2018-05-28 14:45:07 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/3"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/__better_errors/3750a52b4a9a2599/variables" for 127.0.0.1 at 2018-05-28 14:45:25 +0200
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-05-28 15:04:56 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application (12.9ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 1.1ms)
+
+
+
+Sprockets::ArgumentError - require_tree argument must be a directory:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3723620793457976770_70270050438080'
+
+Started POST "/__better_errors/d8dfedb96eaf88f0/variables" for 127.0.0.1 at 2018-05-28 15:04:57 +0200
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-05-28 15:05:44 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application (196.0ms)
+Completed 500 Internal Server Error in 484ms (ActiveRecord: 0.9ms)
+
+
+
+Sprockets::ArgumentError - require_tree argument must be a directory:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3766496153889224067_70320816713340'
+
+Started POST "/__better_errors/e1a5a3159cf3381d/variables" for 127.0.0.1 at 2018-05-28 15:05:45 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:10:30 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (7.2ms)
+Completed 200 OK in 24ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:10:31 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/alison/.rvm/gems/ruby-2.3.4/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (4.3ms)
+Completed 200 OK in 14ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:10:42 +0200
+
+ArgumentError - Missing :controller key on routes definition, please check your routes.:
+  config/routes.rb:2:in `block in <main>'
+  config/routes.rb:1:in `<main>'
+
+Started POST "/__better_errors/b2ff169422f9cd70/variables" for 127.0.0.1 at 2018-05-28 15:10:42 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:10:54 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::ArgumentError - require_tree argument must be a directory:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3766496153889224067_70320799760120'
+
+Started POST "/__better_errors/c8da357bcebeb7bd/variables" for 127.0.0.1 at 2018-05-28 15:10:54 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:13:48 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (598.3ms)
+Completed 500 Internal Server Error in 615ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `resource' for #<#<Class:0x007fe9b10f29c0>:0x007fe9b28e9e48>:
+  app/views/home/index.html.erb:3:in `_app_views_home_index_html_erb__2009686050232923627_70320849902580'
+
+Started POST "/__better_errors/c1a0dd4845dccd58/variables" for 127.0.0.1 at 2018-05-28 15:13:49 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:16:33 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::ArgumentError - require_tree argument must be a directory:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3766496153889224067_70320783331220'
+
+Started POST "/__better_errors/3c46547a5b2d84c1/variables" for 127.0.0.1 at 2018-05-28 15:16:33 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:17:36 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 419ms (Views: 413.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:18:13 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 49ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:19:56 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 60ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:23:08 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 50ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:23:11 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 52ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:23:56 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (523.1ms)
+Completed 500 Internal Server Error in 540ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `resource' for #<#<Class:0x007fe9b10f29c0>:0x007fe9b3bafca8>:
+  app/views/home/index.html.erb:2:in `_app_views_home_index_html_erb__2009686050232923627_70320797115200'
+
+Started POST "/__better_errors/b7d580781d0f3fb2/variables" for 127.0.0.1 at 2018-05-28 15:23:57 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:32:48 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (562.1ms)
+Completed 500 Internal Server Error in 595ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `resource' for #<#<Class:0x007fe9b3df9e00>:0x007fe9b3df8410>:
+  app/views/home/index.html.erb:2:in `_app_views_home_index_html_erb__2009686050232923627_70320860943180'
+
+Started POST "/__better_errors/184ddf8c4669ec51/variables" for 127.0.0.1 at 2018-05-28 15:32:49 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:33:50 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (511.2ms)
+Completed 500 Internal Server Error in 528ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `users' for #<#<Class:0x007fe9b3df9e00>:0x007fe9ac830520>:
+  app/views/home/index.html.erb:2:in `_app_views_home_index_html_erb__2009686050232923627_70320799159580'
+
+Started POST "/__better_errors/7a9d8096355ffef7/variables" for 127.0.0.1 at 2018-05-28 15:33:51 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:34:04 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1..2):
+  app/views/home/index.html.erb:2:in `_app_views_home_index_html_erb__2009686050232923627_70320797734580'
+
+Started POST "/__better_errors/be0b4946bfc27bfa/variables" for 127.0.0.1 at 2018-05-28 15:34:04 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:34:55 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (482.8ms)
+Completed 500 Internal Server Error in 500ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `registration' for #<#<Class:0x007fe9b3df9e00>:0x007fe9b058ac68>
+Did you mean?  registration_url:
+  app/views/home/index.html.erb:2:in `_app_views_home_index_html_erb__2009686050232923627_70320831355780'
+
+Started POST "/__better_errors/ba21cb6735128de8/variables" for 127.0.0.1 at 2018-05-28 15:34:56 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:35:09 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1+):
+  app/views/home/index.html.erb:2:in `_app_views_home_index_html_erb__2009686050232923627_70320852094800'
+
+Started POST "/__better_errors/12816df26379fe5d/variables" for 127.0.0.1 at 2018-05-28 15:35:09 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:40:28 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (412.5ms)
+Completed 500 Internal Server Error in 474ms (ActiveRecord: 1.0ms)
+
+
+
+NameError - undefined local variable or method `users' for #<#<Class:0x007fe9b17b8250>:0x007fe9b17a2310>
+Did you mean?  user_session
+               @user:
+  app/views/home/index.html.erb:2:in `_app_views_home_index_html_erb__2009686050232923627_70320840891200'
+
+Started POST "/__better_errors/ea5ccdb05415cdea/variables" for 127.0.0.1 at 2018-05-28 15:40:29 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:40:49 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1403.8ms)
+Completed 500 Internal Server Error in 1421ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `resource' for #<#<Class:0x007fe9b17b8250>:0x007fe9b29a30c8>:
+  app/views/home/index.html.erb:3:in `block in _app_views_home_index_html_erb__2009686050232923627_70320850289820'
+  app/views/home/index.html.erb:2:in `_app_views_home_index_html_erb__2009686050232923627_70320850289820'
+
+Started POST "/__better_errors/6a08765c46d47122/variables" for 127.0.0.1 at 2018-05-28 15:40:51 +0200
+Started POST "/__better_errors/6a08765c46d47122/variables" for 127.0.0.1 at 2018-05-28 15:41:04 +0200
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:44:02 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 58ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/login" for 127.0.0.1 at 2018-05-28 15:44:03 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/register/cmon_let_me_in" for 127.0.0.1 at 2018-05-28 15:44:05 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 54ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/register/cmon_let_me_in" for 127.0.0.1 at 2018-05-28 15:45:19 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (812.1ms)
+Completed 500 Internal Server Error in 836ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `name_field' for #<ActionView::Helpers::FormBuilder:0x007fe9b2c48878>
+Did you mean?  number_field
+               range_field
+               time_field
+               date_field:
+  app/views/devise/registrations/new.html.erb:8:in `block in _app_views_devise_registrations_new_html_erb__3794691651802755190_70320859881560'
+  app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb__3794691651802755190_70320859881560'
+
+Started POST "/__better_errors/718fbe6c1b75b332/variables" for 127.0.0.1 at 2018-05-28 15:45:20 +0200
+Started GET "/auth/register/cmon_let_me_in" for 127.0.0.1 at 2018-05-28 15:45:53 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 71ms (Views: 69.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/login" for 127.0.0.1 at 2018-05-28 15:46:15 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 59ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2018-05-28 15:46:17 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCWGRiVTOXpVaaIGMRYPPuHjOPQN0ED/8eMdeOTYXqfJzc64SVTRmHRPbFdcAceJkm96Sf/4dcj/YOx5XvidcA==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCWGRiVTOXpVaaIGMRYPPuHjOPQN0ED/8eMdeOTYXqfJzc64SVTRmHRPbFdcAceJkm96Sf/4dcj/YOx5XvidcA==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 80ms (Views: 78.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/register/cmon_let_me_in" for 127.0.0.1 at 2018-05-28 15:46:18 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 56ms (Views: 54.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/register" for 127.0.0.1 at 2018-05-28 15:46:34 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v5vO/6i5mM1WM//mfuhTaLYqu9YOG26a/c05lg2v4nr6/AmhzrlcIWzvbifN/rHn671PAlfgx8p7E34htGdprw==", "user"=>{"name"=>"Alison", "surname"=>"Lagerlöf", "email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "surname", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Alison"], ["surname", "Lagerlöf"], ["email", "test@test.com"], ["encrypted_password", "$2a$11$AMf/vjv6KOxeiOj1Lx8FuenetaQiC0HWq7fnOyr3QTHdA5AnSIm/m"], ["created_at", "2018-05-28 13:46:34.400263"], ["updated_at", "2018-05-28 13:46:34.400263"]]
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-05-28 13:46:34.408050"], ["last_sign_in_at", "2018-05-28 13:46:34.408050"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-05-28 13:46:34.409352"], ["id", 1]]
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 228ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:46:34 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 73ms (Views: 62.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auth/register/edit" for 127.0.0.1 at 2018-05-28 15:46:41 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 57ms (Views: 51.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 15:46:52 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 48ms (Views: 38.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:16:22 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 84ms (Views: 71.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:25:52 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 62ms (Views: 57.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/auth/register/edit" for 127.0.0.1 at 2018-05-28 16:25:54 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 59ms (Views: 52.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth/register/edit" for 127.0.0.1 at 2018-05-28 16:32:34 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 62ms (Views: 58.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/auth/register/edit" for 127.0.0.1 at 2018-05-28 16:33:32 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 50ms (Views: 46.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auth/register/edit" for 127.0.0.1 at 2018-05-28 16:33:46 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 65ms (Views: 62.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auth/register/edit" for 127.0.0.1 at 2018-05-28 16:40:35 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 58ms (Views: 53.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 16:40:45 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 48ms (Views: 40.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auth/register/edit" for 127.0.0.1 at 2018-05-28 16:41:00 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 52ms (Views: 49.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 17:08:36 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 110ms (Views: 96.3ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/auth/logout" for 127.0.0.1 at 2018-05-28 17:08:37 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"18HNDlwtf3CmyovCLUW1b3zu/jZQzXm+QTrbAGIoW9VreWe7VSy2UpzIuvNWhjWUvFTKQS4EMJHjG3B+C2S8PQ=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 110ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 17:08:38 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 71ms (Views: 59.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/register/cmon_let_me_in" for 127.0.0.1 at 2018-05-28 17:08:47 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 68ms (Views: 64.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/register/cmon_let_me_in" for 127.0.0.1 at 2018-05-28 17:51:43 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 251ms (Views: 189.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 17:51:48 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 62ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 17:51:50 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 55ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/login" for 127.0.0.1 at 2018-05-28 17:51:52 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 68ms (Views: 64.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2018-05-28 17:52:05 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8OWlLbcYRgwwiydQxSV03+7k6RfGB7vAnOkFCZ0dgCCDPJMzeyTEoS6+AC0Yx+pUPchbAz9wyBWg9RLiFma2NQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-05-28 15:52:06.151765"], ["sign_in_count", 2], ["updated_at", "2018-05-28 15:52:06.155229"], ["id", 1]]
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/alison/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 215ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-28 17:52:06 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (12.4ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.3ms)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/home/index.html.erb:17:in `_app_views_home_index_html_erb__2009686050232923627_70320799883740'
+
+Started POST "/__better_errors/97e1350117816655/variables" for 127.0.0.1 at 2018-05-28 17:52:06 +0200
