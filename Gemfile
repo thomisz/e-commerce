@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
 # authentification
-gem 'devise'
-gem 'pundit'
+#gem 'devise'
+#gem 'pundit'
 
 gem 'rails'
-gem 'bcrypt',     '3.1.11'
 gem 'puma'
+gem 'bcrypt',         '3.1.11'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
@@ -16,8 +16,6 @@ gem 'jbuilder'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faker'
 gem 'devise'
-gem 'stripe'
-
 
 group :development, :test do
   gem 'sqlite3'
@@ -28,7 +26,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem "factory_bot_rails"
   gem 'simplecov'
-  gem 'dotenv-rails'
 end
 
 group :development do
@@ -48,7 +45,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '0.20.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
